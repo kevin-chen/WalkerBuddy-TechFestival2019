@@ -17,7 +17,6 @@ enum VoiceType: String {
     case standardMale = "en-US-Standard-D"
 }
 
-let ttsAPIUrl = "https://texttospeech.googleapis.com/v1beta1/text:synthesize"
 let APIKey = "******"
 
 class SpeechService: NSObject, AVAudioPlayerDelegate {
@@ -70,33 +69,6 @@ class SpeechService: NSObject, AVAudioPlayerDelegate {
         }
     }
     
-    private func buildPostData(text: String, voiceType: VoiceType) -> Data {
-        
-        var voiceParams: [String: Any] = [
-            // All available voices here: https://cloud.google.com/text-to-speech/docs/voices
-            "languageCode": "en-US"
-        ]
-        
-        if voiceType != .undefined {
-            voiceParams["name"] = voiceType.rawValue
-        }
-        
-        let params: [String: Any] = [
-            "input": [
-                "text": text
-            ],
-            "voice": voiceParams,
-            "audioConfig": [
-                // All available formats here: https://cloud.google.com/text-to-speech/docs/reference/rest/v1beta1/text/synthesize#audioencoding
-                "audioEncoding": "LINEAR16"
-            ]
-        ]
-        
-        // Convert the Dictionary to Data
-        let data = try! JSONSerialization.data(withJSONObject: params)
-        return data
-    }
-    
     // Just a function that makes a POST request.
     private func makePOSTRequest(url: String, postData: Data, headers: [String: String] = [:]) -> [String: AnyObject] {
         var dict: [String: AnyObject] = [:]
@@ -124,15 +96,5 @@ class SpeechService: NSObject, AVAudioPlayerDelegate {
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         
         return dict
-    }
-    
-    // Implement AVAudioPlayerDelegate "did finish" callback to cleanup and notify listener of completion.
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        self.player?.delegate = nil
-        self.player = nil
-        self.busy = false
-        
-        self.completionHandler!()
-        self.completionHandler = nil
     }
 }
