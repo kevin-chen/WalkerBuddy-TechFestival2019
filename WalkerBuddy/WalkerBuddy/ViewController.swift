@@ -78,7 +78,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
                     let userDict = snapshot.value as! [String: Any]
                     if trigger == true {
                         speech = userDict["start"] as! String
-                        
                     }
                     else {
                         speech = userDict["end"] as! String
@@ -88,7 +87,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
                         SpeechService.shared.speak(text: speech, voiceType: .waveNetFemale) { self.startRecording() }
                     }
                     else {
-                        // Fixed Audio Problem
                         do {
                             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
                         }
@@ -105,11 +103,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
         SpeechService.shared.speak(text: "\(item as! String)", voiceType: .waveNetFemale) { }
     }
     
-    @objc func pop(){ // Method loops every 4 seconds
+    @objc func pop(){
         if !self.feed.isLoading{
             self.feed.reload()
         }
-        // print("Tier " + "\(tier)")
     }
 
     func resetSwipe() {
@@ -184,6 +181,4 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
         }
         
     }
-
-
 }
