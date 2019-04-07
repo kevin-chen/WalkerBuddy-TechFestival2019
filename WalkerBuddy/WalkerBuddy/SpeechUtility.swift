@@ -2,7 +2,7 @@
 //  SppechUtility.swift
 //  visionMockup
 //
-//  Created by Kevin Chen on 3/5/2019.
+//  Created by Kevin Chen on 4/6/2019.
 //  Copyright © 2019 New York University. All rights reserved.
 //
 
@@ -18,7 +18,7 @@ enum VoiceType: String {
 }
 
 let ttsAPIUrl = "https://texttospeech.googleapis.com/v1beta1/text:synthesize"
-let APIKey = "AIzaSyDAxcenutNzsSVzEe5RrshNwm-FLzrWH4U"
+let APIKey = "******"
 
 class SpeechService: NSObject, AVAudioPlayerDelegate {
     

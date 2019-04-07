@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  ConnectRaspi
 //
-//  Created by Kevin Chen on 3/15/2019.
+//  Created by Kevin Chen on 4/6/2019.
 //  Copyright © 2019 New York University. All rights reserved.
 //
 
@@ -72,7 +72,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
         
         tier = 1
         // NEW LOCATION Detection
-        let database = Database.database().reference(fromURL: "https://siteseer.firebaseio.com/").child("restart")
+        let database = Database.database().reference(fromURL: "*****").child("restart")
         database.observe(.childChanged, with: { (snapshot) -> Void in
             print("RECOGNIZED RESTART")
             //self.feed.reload()
@@ -82,7 +82,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
                 let userDict = snapshot.value as! [String: Any]
                 trigger = userDict["triggeredPressed"] as! Bool
 
-                let ref = Database.database().reference(fromURL: "https://siteseer.firebaseio.com/").child("restart/speech")
+                let ref = Database.database().reference(fromURL: "******").child("restart/speech")
                 ref.observeSingleEvent(of: .value, with: { (snapshot) in
                     let userDict = snapshot.value as! [String: Any]
                     if trigger == true {
@@ -114,11 +114,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
     
     func object_dectection() {
         // CAMERA Dectection
-        let database2 = Database.database().reference(fromURL: "https://siteseer.firebaseio.com/").child("sight")
+        let database2 = Database.database().reference(fromURL: "******").child("sight")
         database2.observe(.childChanged, with: { (snapshot) -> Void in
             print("RECOGNIZED NEW OBJECT")
             // In order to get the value, that value needs to be embeded in a dictionary {nameObject : {random: desiredObject} }
-            let ref = Database.database().reference(fromURL: "https://siteseer.firebaseio.com/").child("sight/speech")
+            let ref = Database.database().reference(fromURL: "******").child("sight/speech")
             ref.observe(.childAdded, with: { (data) in
                 self.say(item: "Alert: There is a \(data.value as! String) in your proximity")
             })
@@ -268,7 +268,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let url = URL(string: "https://storage.googleapis.com/siteseer/Sidewalk")
+        let url = URL(string: "******")
         feed.load(URLRequest(url: url!))
         btn.text = "Press Trigger to Activate"
         
