@@ -28,3 +28,5 @@ Google Cloud Platform
 Apple API
 
 - [X] Back End - Apple Speech Recognition
+
+<img src="https://github.com/kc3585//blob/master/WalkerBuddy-TechFestival2019/homeScreen.PNG" width=250><br>
