@@ -23,6 +23,7 @@ Google Cloud Platform
 - [X] Back End - Google Storage
 - [X] Back End - Google Maps Directions API
 - [X] Back End - Google Speech Service
+- [ ] Back End - Google Translate
 
 Apple API
 
