@@ -9,7 +9,7 @@ import time as t
 import RPi.GPIO as GPIO
 from firebase import firebase
 
-# AutoML Vision
+# AutoML Vision 
 project_id = '***********'
 compute_region = '***********'
 model_id = '***********' # model 3 'ICN626954994675902736'
@@ -46,8 +46,7 @@ def analyze():
     bucket = storage_client.get_bucket('***********')
 
     automl_client = automl.AutoMlClient()
-    model_full_id = automl_client.model_path(
-    project_id, compute_region, model_id) # Get the full path of the model.
+    model_full_id = automl_client.model_path(project_id, compute_region, model_id) # Get the full path of the model.
 
     with open(file_path, "rb") as image_file:
         content = image_file.read()
