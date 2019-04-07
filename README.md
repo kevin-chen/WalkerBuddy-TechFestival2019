@@ -33,5 +33,5 @@ Apple API
 <img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/homeScreen.PNG" width=500><br>
 <img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/screen.PNG" width=500><br>
 <img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/Firebase.png" width=500><br>
-<img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/storage.PNG" width=500><br>
+<img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/Storage.png" width=500><br>
 <img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/thumbnail.PNG" width=500><br>
