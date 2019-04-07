@@ -27,36 +27,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
-    
-    var tier = 1
-    var lSwipe = false
-    var rSwipe = false
-    var allowedToSwipe = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         say(item: "Press Trigger to Activate")
-    }
-    
-    func main() {
-        // Not Working
-        if (tier == 1) {
-            self.say(item: "Press Trigger to Activate")
-        }
-        else if (tier == 2) {
-            dictate_directions()
-        }
-    }
-    
-    func dictate_directions() {
-        
-        let database = Database.database().reference(fromURL: "*****").child("maps/order")
-        database.observe(.childChanged, with: { (snapshot) in
-            print("DICTATE DIRECTIONS")
-            let speech = snapshot.value as! String
-            self.say(item: speech)
-        })
-
     }
     
     func getting_address() {
@@ -97,21 +71,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
                 })
             })
         })
-    }
-    
-    func say(item: Any) { // Speech
-        SpeechService.shared.speak(text: "\(item as! String)", voiceType: .waveNetFemale) { }
-    }
-    
-    @objc func pop(){
-        if !self.feed.isLoading{
-            self.feed.reload()
-        }
-    }
-
-    func resetSwipe() {
-        lSwipe = false
-        rSwipe = false
     }
     
     func stopRecording() {
