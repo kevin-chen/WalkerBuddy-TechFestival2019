@@ -32,12 +32,7 @@ def touch_sensor():
     if touch_pressed == touch_original:
         touch_original = (not touch_original)
         firebase.put('restart', 'triggeredPressed', (not touch_original))
-
-def takephoto():
-    camera = picamera.PiCamera()
-    camera.capture('image.jpg')
-    camera.close()
-
+        
 def analyze():
     global response_display_name
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="***********"
@@ -63,7 +58,6 @@ def analyze():
 
 def main():
     while True:
-        takephoto()
         analyze()
         touch_sensor()
 
