@@ -8,7 +8,7 @@ import datetime
 import time as t
 import RPi.GPIO as GPIO
 from firebase import firebase
-
+ 
 # AutoML Vision 
 project_id = '***********'
 compute_region = '***********'
