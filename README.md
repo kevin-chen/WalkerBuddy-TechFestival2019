@@ -2,7 +2,7 @@
 
 **In Summary** "Google Maps for the blind"
 
-Social good project to improve accessibility of travel for the blind/visually impaired
+WalkerBuddy is a cost-effective application that improves the accessibility of travel for the visually impaired to navigate in the urban environment. Those who are visually impaired will find it difficult to complete what may be perceived as simple tasks by those who are not disabled such as crossing streets, finding directions, and safely reaching one’s destination. This project directly addresses the demand for more disability-friendly applications for the blind.
 
 ## Features
 - [X] User is able to enter destination verbally using a touch switch trigger.
