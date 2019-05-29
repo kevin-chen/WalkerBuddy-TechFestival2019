@@ -7,7 +7,7 @@ WalkerBuddy is a cost-effective application that improves the accessibility of t
 ## Features
 - [X] User is able to enter destination verbally using a touch switch trigger.
 - [X] Device uses Raspberry Pi to calculate direction and output audio to user
-
+ 
 ## Resources
 XCode
 - [X] Front End - (App) Coded through Xcode & Swift
