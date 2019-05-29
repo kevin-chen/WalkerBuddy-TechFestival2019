@@ -1,5 +1,3 @@
-# Project SiteSeer
-
 from google.cloud import storage
 from google.cloud import automl_v1beta1 as automl
 import os
@@ -12,7 +10,7 @@ from firebase import firebase
 # AutoML Vision 
 project_id = '***********'
 compute_region = '***********'
-model_id = '***********' # model 3 'ICN626954994675902736'
+model_id = '***********'
 file_path = '***********'
 score_threshold = '0.5'
 response_display_name = ""
