@@ -29,6 +29,8 @@ Apple API
 
 - [X] Back End - Apple Speech Recognition
 
+Project Portfolio: https://devpost.com/software/walkerbuddy
+
 <img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/designDescription.png" width=500><br>
 <img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/homeScreen.png" width=500><br>
 <img src="https://github.com/kc3585/WalkerBuddy-TechFestival2019/blob/master/screen.png" width=500><br>
